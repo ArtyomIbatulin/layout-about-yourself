@@ -11,6 +11,7 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -112,6 +113,11 @@ h1 {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 .button__title {
@@ -154,7 +160,7 @@ h1 {
 .container-aboutme-projects {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .myskills {
@@ -181,9 +187,8 @@ h1 {
   line-height: 37px;
 }
 
-.myskills-photo img {
-  width: 555px;
-  height: 450px;
+.myskills-photo {
+  width: 50%;
 }
 
 progress {
@@ -233,17 +238,12 @@ progress::-webkit-progress-value {
 }
 
 .galary {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
-.row {
-  line-height: 0;
-}
-/* .row img { */
-/* max-width: 480px; */
-/* max-height: 480px; */
-/* } */
 
 .row-el {
+  line-height: 0;
   position: relative;
   cursor: pointer;
 }
@@ -293,12 +293,14 @@ progress::-webkit-progress-value {
   width: 255px;
   height: 50px;
   margin-bottom: 30px;
+  border: none;
 }
 
 .message {
   resize: none;
   width: 540px;
   height: 175px;
+  border: none;
 }
 
 footer {
@@ -327,14 +329,29 @@ footer {
   color: #ffffff;
 }
 
-.footer-right img {
+.footer-right a {
   cursor: pointer;
 }
 
-.footer-right img:not(:last-child) {
+.footer-right a:not(:last-child) {
   margin-right: 20px;
 }
 
+@media (max-width: 1170px) {
+  .container-howiwork {
+    width: 90%;
+    height: calc(600 / 1110 * (100vw));
+  }
+}
+@media (max-width: 1120px) {
+  .container-myskills {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .myskills-skills {
+    padding-right: 20px;
+  }
+}
 @media (max-width: 1024px) {
   .promo {
     flex-direction: column;
@@ -347,15 +364,37 @@ footer {
     margin-bottom: 50px;
   }
 
-  .container-howiwork {
-    /* height: calc(600 / 1110 * (100vw - 120px)); */
-    height: calc(600 / 1110 * (100vw));
+  .container-aboutme-projects {
+    flex-wrap: wrap;
+    max-width: 600px;
+  }
+  .for-img {
+    margin-bottom: 30px;
   }
 }
 
+@media (max-width: 985px) {
+  .myskills-photo {
+    width: 95%;
+    order: 1;
+  }
+  .myskills-skills {
+    padding-bottom: 30px;
+    order: 2;
+  }
+  .myskills-skills__title {
+    text-align: center;
+  }
+}
+@media (max-width: 800px) {
+  .galary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 768px) {
-  .container-aboutme-projects {
-    flex-wrap: wrap;
+  .myskills-skills-skill {
+    margin-bottom: 50px;
   }
 }
 @media (max-width: 750px) {
@@ -364,9 +403,77 @@ footer {
   }
 }
 
+@media (max-width: 580px) {
+  .container-aboutme-projects {
+    max-width: 400px;
+  }
+  .myskills-skills {
+    padding: 0;
+  }
+  .message,
+  .nameemale__name,
+  .nameemale__email {
+    width: 350px;
+    padding: 0;
+  }
+  .nameemale__name {
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 552px) {
+  .promo__text {
+    padding: 0 25px 0 25px;
+    line-height: 120%;
+    text-align: center;
+  }
+  .description__text {
+    padding: 0 25px 0 25px;
+    line-height: 120%;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+}
+@media (max-width: 486px) {
+  progress {
+    width: 355px;
+  }
+  progress::-webkit-progress-bar {
+    width: 355px;
+  }
+  .footer__container {
+    display: block;
+    text-align: center;
+  }
+  .footer-left__name,
+  .footer-left__copy {
+    padding-bottom: 20px;
+  }
+}
 @media (max-width: 425px) {
+  .container-aboutme-projects {
+    padding: 0;
+  }
+
+  progress {
+    width: 300px;
+  }
+  progress::-webkit-progress-bar {
+    width: 300px;
+  }
+  .message,
+  .nameemale__name,
+  .nameemale__email {
+    width: 280px;
+  }
 }
 @media (max-width: 375px) {
+  progress {
+    width: 250px;
+  }
+  progress::-webkit-progress-bar {
+    width: 250px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -383,12 +490,22 @@ footer {
     line-height: 100%;
     text-align: center;
   }
-  .promo__text {
-    line-height: 120%;
-    text-align: center;
+
+  .description__title {
+    padding-top: 30px;
   }
 
-  .container-aboutme-projects {
-    padding: 0;
+  .myskills {
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+  .container-myskills {
+    padding: 0px;
+  }
+  .container-howiwork {
+    margin-bottom: 80px;
+  }
+  .wantsite {
+    margin-bottom: 20px;
   }
 }
