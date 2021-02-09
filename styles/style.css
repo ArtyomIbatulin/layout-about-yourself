@@ -240,7 +240,7 @@ progress::-webkit-progress-value {
 .galary {
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 100%;
 
   /* display: grid; */
   /* grid-template-columns: repeat(4, 1fr); */
@@ -250,7 +250,7 @@ progress::-webkit-progress-value {
   line-height: 0;
   position: relative;
   cursor: pointer;
-  width: 25%;
+  width: 25%; /*Для flexbox*/
 }
 .row-el:hover:before {
   opacity: 1;
@@ -319,7 +319,7 @@ footer {
 .footer__container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .footer-left__name {
