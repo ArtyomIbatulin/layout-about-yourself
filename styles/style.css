@@ -238,14 +238,19 @@ progress::-webkit-progress-value {
 }
 
 .galary {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+
+  /* display: grid; */
+  /* grid-template-columns: repeat(4, 1fr); */
 }
 
 .row-el {
   line-height: 0;
   position: relative;
   cursor: pointer;
+  width: 25%;
 }
 .row-el:hover:before {
   opacity: 1;
@@ -294,6 +299,7 @@ progress::-webkit-progress-value {
   height: 50px;
   margin-bottom: 30px;
   border: none;
+  padding: 0 0 0 20px;
 }
 
 .message {
@@ -301,6 +307,7 @@ progress::-webkit-progress-value {
   width: 540px;
   height: 175px;
   border: none;
+  padding: 20px 0 0 20px;
 }
 
 footer {
@@ -387,9 +394,13 @@ footer {
   }
 }
 @media (max-width: 800px) {
-  .galary {
+  /* .galary {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  } */
+
+  .row-el {
+    width: 50%;
   }
 }
 @media (max-width: 768px) {
@@ -414,7 +425,10 @@ footer {
   .nameemale__name,
   .nameemale__email {
     width: 350px;
-    padding: 0;
+    padding: 0 0 0 20px;
+  }
+  .message {
+    padding: 20px 0 0 20px;
   }
   .nameemale__name {
     margin-right: 0px;
